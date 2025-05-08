@@ -1,7 +1,7 @@
 {
   "name": "wavingtiles",
   "version": "1.0.0",
-  "description": "Animated colourful tiles using perlin noise",
+  "description": "Waving tiles animated using perlin noise",
   "homepage": "https://github.com/mjpeake/wavingtiles#readme",
   "bugs": {
     "url": "https://github.com/mjpeake/wavingtiles/issues"
