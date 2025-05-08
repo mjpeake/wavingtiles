@@ -1,5 +1,5 @@
 {
-  "name": "wavingtiles",
+  "name": "@mjpeake/wavingtiles",
   "version": "1.0.0",
   "description": "Waving tiles animated using perlin noise",
   "homepage": "https://github.com/mjpeake/wavingtiles#readme",
