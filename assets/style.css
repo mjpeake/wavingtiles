@@ -1,14 +1,233 @@
+@font-face {
+  font-family: "Kollektif Bold";
+  src: url("./fonts/kollektif-bold.woff2") format("woff2"),
+       url("./fonts/kollektif-bold.woff") format("woff");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
 html,
 body {
   height: 100%;
-  width: 100%;
+  min-height: 100%;
   padding: 0;
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.demo-page {
+  width: min(96vw, 1320px);
+  margin: 0 auto;
+  min-height: 100dvh;
+  padding: clamp(16px, 3vw, 32px);
+  padding-top: max(clamp(16px, 3vw, 32px), env(safe-area-inset-top));
+  padding-bottom: max(clamp(16px, 3vw, 32px), env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2.5vw, 24px);
+}
+
+.demo-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 82vh;
+  background: #000;
+  border: 2px solid #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.45);
+  margin: 0 auto;
 }
 
 #wavingtiles {
   height: 100%;
   width: 100%;
-  overflow: hidden;
   display: block;
+}
+
+.demo-meta {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.demo-title {
+  margin: 0;
+  color: #fff;
+  font-family: "Kollektif Bold", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: clamp(1.05rem, 2.8vw, 1.6rem);
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.demo-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.demo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  background: #111;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.demo-button:hover,
+.demo-button:focus-visible {
+  background: #fff;
+  color: #000;
+  transform: translateY(-1px);
+}
+
+.demo-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.button-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+.demo-button-github {
+  width: 52px;
+  min-height: 52px;
+  padding: 0;
+}
+
+.demo-button-site {
+  min-width: 52px;
+  min-height: 52px;
+  padding: 8px 12px;
+}
+
+.site-logo {
+  display: block;
+  height: clamp(20px, 2.4vw, 24px);
+  width: auto;
+  max-width: min(42vw, 160px);
+  filter: brightness(0) invert(1);
+}
+
+.demo-button-site:hover .site-logo,
+.demo-button-site:focus-visible .site-logo {
+  filter: none;
+}
+
+@media (max-width: 700px) {
+  .demo-page {
+    width: 100%;
+    min-height: 100dvh;
+    justify-content: center;
+    align-items: center;
+    padding: max(12px, env(safe-area-inset-top)) 12px max(18px, env(safe-area-inset-bottom));
+    gap: 14px;
+  }
+
+  .demo-frame {
+    width: min(100%, 680px);
+    aspect-ratio: 4 / 3;
+    max-height: 64dvh;
+    border-radius: 12px;
+  }
+
+  .demo-meta {
+    width: min(100%, 680px);
+    grid-template-columns: 1fr auto;
+  }
+
+  .demo-title {
+    font-size: clamp(1rem, 5.8vw, 1.35rem);
+  }
+
+  .demo-actions {
+    gap: 10px;
+  }
+
+  .demo-button {
+    border-radius: 10px;
+  }
+
+  .button-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .demo-button-github {
+    width: 54px;
+    min-height: 54px;
+  }
+
+  .demo-button-site {
+    min-width: 54px;
+    min-height: 54px;
+  }
+
+  .site-logo {
+    height: 24px;
+    max-width: min(36vw, 148px);
+  }
+}
+
+@media (max-height: 700px) and (min-width: 701px) {
+  .demo-page {
+    padding-top: max(10px, env(safe-area-inset-top));
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    gap: 10px;
+  }
+
+  .demo-frame {
+    max-height: calc(100dvh - 110px);
+  }
+
+  .demo-title {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+  }
+
+  .demo-actions {
+    gap: 8px;
+  }
+
+  .demo-button-github {
+    width: 46px;
+    min-height: 46px;
+  }
+
+  .demo-button-site {
+    min-width: 46px;
+    min-height: 46px;
+    padding: 6px 10px;
+  }
+
+  .button-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .site-logo {
+    height: 20px;
+  }
 }
