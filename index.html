@@ -1,55 +1,48 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Waving Tiles</title>
-  <link rel="shortcut icon" type="/image/png" href="https://mattpeake.com/assets/images/logo.png">
+  <meta name="description" content="A field of tiles turns a noise-driven wave into shifting colour and rhythm.">
+  <meta name="theme-color" content="#111111">
+  <title>Waving Tiles · Matt Peake</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/brand/ridgeline-symbol-soft-light.svg">
+  <link rel="preload" href="./assets/fonts/oxanium.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/fonts/manrope.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./assets/style.css">
-  <script src="./dist/wavingtiles.js" defer></script>
+  <script src="./assets/project-display.js" defer></script>
 </head>
-
 <body>
-  <main class="demo-page">
-    <section class="demo-frame" aria-label="Waving Tiles animation preview">
-      <canvas id="wavingtiles" role="img" aria-label="Animated Waving Tiles visualization">
-        Your browser does not support HTML canvas.
-      </canvas>
+  <a class="skip" href="#project-info">Skip to project information</a>
+  <main class="demo-page" data-kind="visualisation" data-artwork="./assets/artwork/wavingtiles.html" data-animated>
+    <section class="demo-frame" aria-label="Waving Tiles animation" aria-describedby="artwork-description">
+      <div class="animation" id="demo-canvas" role="img" aria-label="Coloured tiles growing and shrinking in a wave"></div>
     </section>
-    <section class="demo-meta" aria-label="Demo title and links">
-      <h1 class="demo-title">Waving Tiles</h1>
-      <nav class="demo-actions" aria-label="Demo links">
-        <a class="demo-button demo-button-github" href="https://github.com/mjpeake/wavingtiles" target="_blank"
-          rel="noopener noreferrer" aria-label="View on GitHub">
-          <svg class="button-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-            <path fill="currentColor"
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-          </svg>
-        </a>
-        <a class="demo-button demo-button-site" href="https://mattpeake.com" target="_blank"
-          rel="noopener noreferrer" aria-label="Visit mattpeake.com">
-          <img class="site-logo" src="./assets/logo.svg" alt="mattpeake.com" />
-        </a>
-      </nav>
+    <div class="demo-meta" id="project-info" tabindex="-1">
+      <h1>Waving Tiles</h1>
+      <div class="project-actions">
+        <div class="artwork-controls" role="group" aria-label="Artwork controls">
+          <button class="action icon-link" id="regenerate" type="button" aria-controls="demo-canvas" aria-label="Regenerate artwork" title="Regenerate artwork" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 11a9 9 0 0 1 15.5-6.5L21 7M21 2v5h-5"/><path d="M21 13a9 9 0 0 1-15.5 6.5L3 17M8 17H3v5"/></svg>
+          </button>
+          <button class="action icon-link" id="motion" type="button" aria-controls="demo-canvas" aria-label="Pause animation" title="Pause animation" hidden></button>
+        </div>
+        <nav aria-label="Project links">
+          <a class="action icon-link" href="https://github.com/mjpeake/wavingtiles" target="_blank" rel="noopener noreferrer" aria-label="View Waving Tiles source on GitHub" title="View source on GitHub">
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+          <a class="action icon-link brand-link" href="https://www.mattpeake.com/" aria-label="Visit Matt Peake's website" title="Visit Matt Peake's website" draggable="false">
+            <img id="logo" src="./assets/brand/ridgeline-symbol-soft-light.svg" alt="" width="28" height="28" draggable="false">
+          </a>
+        </nav>
+      </div>
+    </div>
+    <section class="project-note" aria-label="About Waving Tiles">
+      <p id="artwork-description">A field of tiles turns a noise-driven wave into shifting colour and rhythm.</p>
+      <p>Pause to explore the pattern, or regenerate for a fresh composition.</p>
+      <p class="motion-status" id="motion-status" role="status" aria-live="polite" hidden></p>
     </section>
+    <noscript><p class="project-note">Enable JavaScript to view the animation. The project source is available above.</p></noscript>
   </main>
-
-  <script>
-    const styles = [];
-    styles.push({ colors: ["#3F3244", "#60495A", "#A9ACA9", "#BFC3BA"], backgroundColor: "#2F2235", density: 50 });
-    styles.push({ colors: ["#F9F9F9", "#191919", "#F9F9F9"], backgroundColor: "#191919", density: 100 });
-    styles.push({ colors: ["#003554", "#006494", "#0582CA", "#00A6FB"], backgroundColor: "#051923", density: 75 });
-    styles.push({ colors: ["#7209b7", "#b5179e", "#f72585", "#4cc9f0", "#4895ef", "#4361ee"], backgroundColor: "#3a0ca3", density: 100 });
-    styles.push({ colors: ["#a3b18a", "#588157", "#3a5a40", "#344e41"], backgroundColor: "#dad7cd", density: 75 });
-    styles.push({ colors: ["#002626", "#0E4749", "#002626"], backgroundColor: "#002626", density: 25 });
-    styles.push({ colors: ["#151515", "#A63D40", "#151515", "#E9B872", "#151515"], backgroundColor: "#151515", density: 75 });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const index = Math.floor(Math.random() * styles.length);
-      WavingTiles.WavingTiles("wavingtiles", styles[index].colors, styles[index].backgroundColor, styles[index].density);
-    });
-  </script>
 </body>
-
 </html>
